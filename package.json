@@ -1,7 +1,7 @@
 {
-  "name": "golde-react-template",
-  "version": "1.3.0",
-  "description": "template in react",
+  "name": "platzi-react-coruse",
+  "version": "1.0.0",
+  "description": "Course in Platzi about React Redux",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --env.ANALYZER=disabled --config ./config/webpack.prod.config.js",
@@ -64,7 +64,9 @@
     "@reach/router": "^1.3.3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
