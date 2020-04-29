@@ -17,7 +17,6 @@ const Home = ({suggestions}) => {
 
     }
 
-    
     return (
         <Layout title="Home">
             <NavBar 
@@ -27,7 +26,7 @@ const Home = ({suggestions}) => {
                 onChangeSelection={onChangeSelection}
             />
             <div className="main-container">
-                {suggestions}
+                {suggestions.map(suggestion => suggestion.title)}
             </div>
         </Layout>
     );
