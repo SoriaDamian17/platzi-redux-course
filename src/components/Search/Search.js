@@ -34,7 +34,9 @@ const Search = ({text, suggestions, onChangeText, onChangeSelection}) => {
                     />
                 {isOpen &&
                 <div className="container-results">
-                    {suggestions.map(suggestion => suggestion.title)}
+                    <div className="list-group">
+                        {suggestions.map(suggestion => <span key={suggestion.id} className="list-group-item list-group-item-action">{suggestion.title}</span>)}
+                    </div >
                 </div>
                 }
             </form>

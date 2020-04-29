@@ -7,7 +7,7 @@ const NavBar = ({text, suggestions, onChangeText, onChangeSelection}) => (
         <nav className="navbar navbar-dark bg-primary">
             <Link className="navbar-brand" to="/">
                 <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt="" />
-                Bootstrap
+                Cursera
             </Link>
             <Search 
                 text={text}
