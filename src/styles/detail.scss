@@ -1,0 +1,26 @@
+.details-page {
+	display: flex;
+	justify-content: center;
+	padding: 3rem 1rem;
+}
+
+.paper-container {
+	padding: 1rem;
+	width: fit-content;
+}
+
+.content {
+	padding: 1rem 0;
+}
+
+.item-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 250px;
+	width: 100%;
+}
+
+.item-loader {
+	padding: 1rem;
+}
