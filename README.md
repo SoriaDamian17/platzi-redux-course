@@ -2,6 +2,9 @@
 This project is a base template for a project in React, where it has all the settings for two environments: development and production, it has bundle optimization and code revision.
 
 # Screen Shot
+![Alt text](doc/screenshot-1.png?raw=true "ScreenShot")
+![Alt text](doc/screenshot-2.png?raw=true "ScreenShot")
+
 
 ## How to use the project locally
 
