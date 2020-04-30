@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 import Search from '../Search';
 
-const NavBar = ({text, suggestions, onChangeText, onChangeSelection}) => (
+const NavBar = ({text, suggestions, onChangeText, onChangeSelection, onClick}) => (
     <div id="ui-control-navbar">
         <nav className="navbar navbar-dark bg-primary">
             <Link className="navbar-brand" to="/">
@@ -14,6 +14,7 @@ const NavBar = ({text, suggestions, onChangeText, onChangeSelection}) => (
                 suggestions={suggestions}
                 onChangeText={onChangeText}
                 onChangeSelection={onChangeSelection}
+                onClick={onClick}
             />
         </nav>
     </div>

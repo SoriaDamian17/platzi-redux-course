@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link  } from '@reach/router';
 import { connect } from 'react-redux';
 import findSuggestions from '../redux/actions/findSuggestions';
 import findResults from '../redux/actions/findResults';
@@ -23,6 +24,10 @@ const Home = ({suggestions, results, findSuggestions, findResults}) => {
         findResults(textVal);
     }
 
+    function handleClick(id) {
+        window.location.href = `/detail/${id}`;
+    }
+
     return (
         <Layout title="Home">
             <NavBar 
@@ -30,13 +35,19 @@ const Home = ({suggestions, results, findSuggestions, findResults}) => {
                 suggestions={suggestions}
                 onChangeText={onChangeText}
                 onChangeSelection={onChangeSelection}
+                onClick={handleClick}
             />
             <div className="container mt-5">
+                <h2>List Course</h2>
                 <div className="row">
                     {results.length === 0 ?
                         <Alert />
                         :
-                        results.map(result => <div className="col mt-5"><Card image={result.image} title={result.title} description={result.content}/></div>)
+                        results.map(result => <div key={result.id} className="col mt-5">
+                            <Link to={`detail/${result.id}`}>
+                            <Card image={result.image} title={result.title} description={result.content}/>
+                            </Link>
+                            </div>)
                     }
                 </div>
             </div>
