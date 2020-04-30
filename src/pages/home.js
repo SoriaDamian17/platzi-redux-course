@@ -32,11 +32,13 @@ const Home = ({suggestions, results, findSuggestions, findResults}) => {
                 onChangeSelection={onChangeSelection}
             />
             <div className="container mt-5">
-                {results.length === 0 ?
-                    <Alert />
-                    :
-                    results.map(result => <Card title={result.title}/>)
-                }
+                <div className="row">
+                    {results.length === 0 ?
+                        <Alert />
+                        :
+                        results.map(result => <div className="col mt-5"><Card image={result.image} title={result.title} description={result.content}/></div>)
+                    }
+                </div>
             </div>
         </Layout>
     );

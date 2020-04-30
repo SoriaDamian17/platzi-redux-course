@@ -29,6 +29,7 @@ const Search = ({text, suggestions, onChangeText, onChangeSelection}) => {
                     onKeyPress={(event) => {
                         if (event.key === 'Enter' && text) {
                             onChangeSelection(text);
+                            event.preventDefault();
                         }
                     }}
                     />

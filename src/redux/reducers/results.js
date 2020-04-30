@@ -1,7 +1,7 @@
 import { type as findResults } from '../actions/findResults';
 import items from '../../api/items';
 
-const defaultState = [];
+const defaultState = items;
 
 function reducer(state = defaultState, { type, payload}) {
     switch (type) {

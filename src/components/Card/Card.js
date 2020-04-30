@@ -1,12 +1,16 @@
 import React from 'react';
 import PropsType from 'prop-types';
 
-const Card = ({title, description, src}) => (
+import './Card.scss';
+
+const Card = ({title, description, image}) => (
     <div className="card">
-        <img src={src} className="card-img-top" alt="..." />
+        <div className="card-img">
+            <img src={image} className="card-img-top hidden" alt="..." />
+        </div>
         <div className="card-body">
             <h5 className="card-title">{title}</h5>
-            <p className="card-text">{description}</p>
+            <p className="card-text">{description.substring(1, 150)}</p>
         </div>
     </div>
 );
