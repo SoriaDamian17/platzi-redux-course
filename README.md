@@ -1,5 +1,5 @@
-# Golden React Template
-This project is a base template for a project in React, where it has all the settings for two environments: development and production, it has bundle optimization and code revision.
+# Platzi React Course
+This project is a practice using React and Redux.
 
 # Screen Shot
 ![Alt text](doc/screenshot-1.png?raw=true "ScreenShot")
