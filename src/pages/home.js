@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import findSuggestions from '../redux/actions/findSuggestions';
+import findResults from '../redux/actions/findResults';
+import Alert from '../components/Alert';
+import Card from '../components/Card';
 import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
 
 import '../styles/home.scss';
 
-const Home = ({suggestions}) => {
+const Home = ({suggestions, results, findSuggestions, findResults}) => {
 
     const [text, setText] = useState('');
 
     function onChangeText(textVal) {
         setText(textVal);
+        findSuggestions(textVal);
     }
 
     function onChangeSelection(textVal) {
-
+        setText(textVal);
+        findResults(textVal);
     }
 
     return (
@@ -25,8 +31,14 @@ const Home = ({suggestions}) => {
                 onChangeText={onChangeText}
                 onChangeSelection={onChangeSelection}
             />
-            <div className="main-container">
-                {suggestions.map(suggestion => suggestion.title)}
+            <div className="container mt-5">
+                <div className="row">
+                    {results.length === 0 ?
+                        <Alert />
+                        :
+                        results.map(result => <div className="col mt-5"><Card image={result.image} title={result.title} description={result.content}/></div>)
+                    }
+                </div>
             </div>
         </Layout>
     );
@@ -35,7 +47,13 @@ const Home = ({suggestions}) => {
 const mapStateToProps = (state) => {
     return {
         suggestions: state.suggestions,
+        results: state.results
     };
 };
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = {
+    findSuggestions,
+    findResults
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

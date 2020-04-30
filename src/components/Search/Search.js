@@ -29,12 +29,15 @@ const Search = ({text, suggestions, onChangeText, onChangeSelection}) => {
                     onKeyPress={(event) => {
                         if (event.key === 'Enter' && text) {
                             onChangeSelection(text);
+                            event.preventDefault();
                         }
                     }}
                     />
                 {isOpen &&
                 <div className="container-results">
-                    {suggestions.map(suggestion => suggestion.title)}
+                    <div className="list-group">
+                        {suggestions.map(suggestion => <span key={suggestion.id} className="list-group-item list-group-item-action">{suggestion.title}</span>)}
+                    </div >
                 </div>
                 }
             </form>
