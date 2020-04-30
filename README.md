@@ -5,7 +5,6 @@ This project is a practice using React and Redux.
 ![Alt text](doc/screenshot-1.png?raw=true "ScreenShot")
 ![Alt text](doc/screenshot-2.png?raw=true "ScreenShot")
 
-
 ## How to use the project locally
 
 ```bash
@@ -22,19 +21,6 @@ This project is a practice using React and Redux.
 - Go to: http://localhost:3000
 ```
 
-## Run Linters
-You can manually run the stylelinter and eslinter but you have husky configured in githook with precommit to run when you commit.
-
-```bash
-$ npm run lint || npm run lint:scss
-```
-
-you can omit the hook by adding the flag --no-verify
-
-```bash
-$ git commit -m "message" --no-verify
-```
-
 ## Deploy your application in Docker
 Lets build the docker image we just created. Make sure you are in the project root directory in your terminal and run the following command
 
@@ -49,13 +35,6 @@ $ docker run -p 8000:80 react-docker
 ```
 
 Now open http://localhost:8000 in your browser to check its running !
-
-## Deploy with Now
-To deploy your project run this command
-
-```bash
-$ now
-```
 
 # Credits
 
