@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './Search.scss';
 
-const Search = ({text, suggestions, onChangeText, onChangeSelection}) => {
+const Search = ({text, suggestions, onChangeText, onChangeSelection, onClick}) => {
 
     const [isOpen, setOpen] = useState(false);
 
@@ -36,7 +36,19 @@ const Search = ({text, suggestions, onChangeText, onChangeSelection}) => {
                 {isOpen &&
                 <div className="container-results">
                     <div className="list-group">
-                        {suggestions.map(suggestion => <span key={suggestion.id} className="list-group-item list-group-item-action">{suggestion.title}</span>)}
+                        {suggestions.map(suggestion => {
+                            return <button
+                                        key={suggestion.id} 
+                                        type="button"
+                                        className="list-group-item list-group-item-action"
+                                        onClick={() => {
+                                            onClick(suggestion.id);
+                                        }}>
+                                            {suggestion.title}
+                                    </button>;
+                            }
+                        )
+                        }
                     </div >
                 </div>
                 }
